@@ -52,6 +52,7 @@ public class MyServer {
             System.out.println("ゲームが終了しました。サーバーをシャットダウンします。");
         } catch (Exception e) {
             System.err.println("ソケット作成時にエラーが発生しました");
+            e.printStackTrace();
         } finally {
             try {
                 for (int i = 0; i < maxPlayer; i++) {
