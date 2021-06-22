@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -32,7 +33,7 @@ public class MyServer {
 
             while(true) {
                 mySocket[myNum] = server.accept();
-                myIsr[myNum] = new InputStreamReader(mySocket[myNum].getInputStream());
+                myIsr[myNum] = new InputStreamReader(mySocket[myNum].getInputStream(), StandardCharsets.UTF_8);
                 myIn[myNum] = new BufferedReader(myIsr[myNum]);
                 myOut[myNum] = new PrintWriter(mySocket[myNum].getOutputStream(), true);
                 myName[myNum] = myIn[myNum].readLine();

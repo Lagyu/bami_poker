@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class MyPlayer {
@@ -28,7 +29,7 @@ public class MyPlayer {
 
                 try {
                     s = new Socket("localhost", 8080);
-                    in = new InputStreamReader(s.getInputStream());
+                    in = new InputStreamReader(s.getInputStream(), StandardCharsets.UTF_8);
                     br = new BufferedReader(in);
                     out = new PrintWriter(s.getOutputStream(), true);
 
