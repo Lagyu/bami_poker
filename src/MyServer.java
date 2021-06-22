@@ -52,6 +52,7 @@ public class MyServer {
             System.out.println("ゲームが終了しました。サーバーをシャットダウンします。");
         } catch (Exception e) {
             System.err.println("ソケット作成時にエラーが発生しました");
+            e.printStackTrace();
         } finally {
             try {
                 for (int i = 0; i < maxPlayer; i++) {
@@ -1162,8 +1163,8 @@ class Cards {
             System.arraycopy(deck, 0, cardsA, 0, 9);
             System.arraycopy(deck, 9, cardsB, 0, 8);
 
-            for (int j = 0; j < 8; j++) tmp[j * 2] = cardsB[j];
-            for (int j = 0; j < 9; j++) tmp[j * 2 + 1] = cardsA[j];
+            for (int j = 0; j < 8; j++) tmp[j * 2 + 1] = cardsB[j];
+            for (int j = 0; j < 9; j++) tmp[j * 2] = cardsA[j];
 
             deck = tmp;
         }
